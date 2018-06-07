@@ -40,8 +40,8 @@
         <div class="form-group col-sm-10">
           <input type="text" placeholder="RTMP" class="form-control">
         </div>
-        <button type="submit" class="btn btn-success">push</button>
-        <button type="button" class="btn btn-info">disconnect</button>
+        <button type="submit" class="btn btn-success" :click="push">push</button>
+        <button type="button" class="btn btn-info" :click="disconnect">disconnect</button>
       </form>
     </div>
     <div class="row">
@@ -58,42 +58,42 @@
           <div class="form-group">
             <label class="col-sm-4 control-label">CameraSize</label>
             <div class="col-sm-3">
-              <input type="number" class="form-control">
+              <input type="number" class="form-control" v-model="camWidth">
             </div>
             <div class="col-sm-1">
               <p class="tag">X</p>
             </div>
             <div class="col-sm-3">
-              <input type="number" class="form-control">
+              <input type="number" class="form-control" v-model="camHeight">
             </div>
           </div>
           <div class="form-group">
             <label class="col-sm-4 control-label">Quality</label>
             <div class="col-sm-3">
-              <input type="number" class="form-control">
+              <input type="number" class="form-control" v-model="quality">
             </div>
           </div>
           <div class="form-group">
             <label class="col-sm-4 control-label">Bandwidth</label>
             <div class="col-sm-4">
-              <input type="number" class="form-control">
+              <input type="number" class="form-control" v-model="bandwidth">
             </div>
           </div>
           <div class="form-group">
             <label class="col-sm-4 control-label">CameraFps</label>
             <div class="col-sm-3">
-              <input type="number" class="form-control">
+              <input type="number" class="form-control" v-model="camFps">
             </div>
           </div>
           <div class="form-group">
             <label class="col-sm-4 control-label">CamFrameInterval</label>
             <div class="col-sm-3">
-              <input type="number" class="form-control">
+              <input type="number" class="form-control" v-model="camFrameInterval">
             </div>
           </div>
           <div class="form-group">
             <div class="col-sm-offset-2 col-sm-8">
-              <button type="submit" class="btn btn-success">submit</button>
+              <button type="submit" class="btn btn-success" :click="changeSetting">submit</button>
             </div>
           </div>
         </form>
@@ -113,7 +113,7 @@
     ];
 
     new Vue({
-      el: "app",
+      el: "#app",
       template: document.getElementById('template').innerHTML,
       data: {
         rtmp: "",
