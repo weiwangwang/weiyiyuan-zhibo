@@ -38,7 +38,7 @@
     <div class="row rtmp-content">
       <form class="form-inline">
         <div class="form-group col-sm-10">
-          <input type="text" placeholder="RTMP" class="form-control">
+          <input type="text" placeholder="RTMP" class="form-control" v-model="rtmp">
         </div>
         <button type="submit" class="btn btn-success" :click="push">push</button>
         <button type="button" class="btn btn-info" :click="disconnect">disconnect</button>
